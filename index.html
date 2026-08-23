@@ -1,0 +1,5100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muntasir Tamzid</title>
+    <meta
+      name="description"
+      content="Portfolio of Muntasir Tamzid, a UI/UX Designer focused on creating intuitive, accessible and meaningful digital experiences."
+    />
+    <meta property="og:title" content="Muntasir Tamzid — UI/UX Designer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Muntasir Tamzid, a UI/UX Designer focused on creating intuitive, accessible and meaningful digital experiences."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===========================================================
+         CSS VARIABLES — edit colors, spacing, radius here
+      =========================================================== */
+      :root {
+        --bg: #0a0a0a;
+        --surface: #131313;
+        --surface-2: #1a1a1a;
+        --surface-hover: #202020;
+        --border: rgba(255, 255, 255, 0.09);
+        --border-strong: rgba(255, 255, 255, 0.16);
+        --text-primary: #f5f5f4;
+        --text-secondary: #8f8f8f;
+        --text-tertiary: #5c5c5c;
+        --accent: #ffffff;
+        --accent-ink: #0a0a0a;
+        --success: #4ade80;
+
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --radius-pill: 999px;
+
+        --container: 1160px;
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 16px;
+        --space-4: 24px;
+        --space-5: 32px;
+        --space-6: 48px;
+        --space-7: 64px;
+        --space-8: 96px;
+
+        --font-display: "DM Sans", "Inter", sans-serif;
+        --font-body: "Inter", sans-serif;
+
+        --ease: cubic-bezier(0.16, 0.8, 0.24, 1);
+      }
+
+      /* ===========================================================
+         new CSS
+      =========================================================== */
+
+      .fact-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .fact-icon {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 40px;
+
+        border-radius: 11px;
+
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+      }
+
+      .fact-icon svg {
+        width: 23px;
+        height: 23px;
+        display: block;
+      }
+
+      .skill-card .icon-badge {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .skill-card:hover .icon-badge {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+      }
+
+      .skill-description {
+        margin: 10px 0 18px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .skill-card ul li {
+        transition:
+          transform 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .skill-card:hover ul li {
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .skill-card:hover ul li:hover {
+        transform: translateX(4px);
+      }
+      .hero-copy h1 {
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .hero-copy h1 .highlight {
+        color: #ffffff;
+        font-weight: 600;
+      }
+      /* ===========================================================
+         RESET
+      =========================================================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+      }
+      input,
+      textarea {
+        font-family: inherit;
+      }
+      .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        position: relative;
+      }
+
+      ::selection {
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      [tabindex]:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ===========================================================
+         TYPOGRAPHY
+      =========================================================== */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 7px 14px;
+        border-radius: var(--radius-pill);
+      }
+      .section-head {
+        text-align: center;
+        max-width: 560px;
+        margin: 0 auto var(--space-7);
+      }
+      .section-head h2 {
+        font-size: clamp(28px, 3.6vw, 40px);
+        margin-top: 14px;
+      }
+      .section-head p {
+        color: var(--text-secondary);
+        margin-top: 12px;
+        font-size: 15px;
+      }
+      .section-pad {
+        padding: var(--space-8) 0;
+      }
+
+      /* ===========================================================
+         BUTTONS
+      =========================================================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 22px;
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        transition:
+          transform 0.35s var(--ease),
+          background 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+        white-space: nowrap;
+      }
+      .btn svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.3s var(--ease);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px -8px rgba(255, 255, 255, 0.25);
+      }
+      .btn-primary:hover svg {
+        transform: translateX(3px);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--text-primary);
+        border-color: var(--border-strong);
+      }
+      .btn-secondary:hover {
+        background: var(--surface-hover);
+        border-color: var(--text-secondary);
+        transform: translateY(-2px);
+      }
+      .btn-small {
+        padding: 9px 16px;
+        font-size: 13px;
+      }
+      .btn[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+
+      /* ===========================================================
+         NAVBAR
+      =========================================================== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        padding: 20px 0;
+        transition:
+          background 0.35s ease,
+          border-color 0.35s ease,
+          padding 0.35s ease,
+          backdrop-filter 0.35s ease;
+        border-bottom: 1px solid transparent;
+      }
+      .navbar.scrolled {
+        padding: 14px 0;
+        background: rgba(10, 10, 10, 0.78);
+        backdrop-filter: blur(14px);
+        border-color: var(--border);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+      }
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        border-radius: 0;
+        background: transparent;
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 0;
+        display: block;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+      }
+      .nav-links a {
+        font-size: 14px;
+        color: var(--text-secondary);
+        font-weight: 500;
+        position: relative;
+        transition: color 0.25s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 1px;
+        background: var(--text-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s var(--ease);
+      }
+      .nav-links a:hover {
+        color: var(--text-primary);
+      }
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .hamburger {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--border-strong);
+        background: transparent;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      .hamburger span {
+        position: relative;
+        width: 16px;
+        height: 1px;
+        background: var(--text-primary);
+        display: block;
+      }
+      .hamburger span::before,
+      .hamburger span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 16px;
+        height: 1px;
+        background: var(--text-primary);
+        transition: transform 0.3s ease;
+      }
+      .hamburger span::before {
+        top: -5px;
+      }
+      .hamburger span::after {
+        top: 5px;
+      }
+      .hamburger.open span {
+        background: transparent;
+      }
+      .hamburger.open span::before {
+        transform: translateY(5px) rotate(45deg);
+      }
+      .hamburger.open span::after {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 190;
+        background: rgba(8, 8, 8, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition:
+          opacity 0.35s var(--ease),
+          transform 0.35s var(--ease),
+          visibility 0.35s;
+      }
+      .mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .mobile-menu a {
+        font-size: 26px;
+        font-family: var(--font-display);
+        font-weight: 600;
+      }
+      .mobile-menu .btn {
+        margin-top: 10px;
+      }
+
+      /* ===========================================================
+         HERO
+      =========================================================== */
+      .hero {
+        padding: 168px 0 var(--space-8);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .hero-copy .eyebrow {
+        opacity: 0;
+        animation: riseIn 0.7s var(--ease) 0.05s forwards;
+      }
+      .hero-copy h1 {
+        font-size: clamp(38px, 5.1vw, 58px);
+        margin-top: 22px;
+        opacity: 0;
+        animation: riseIn 0.7s var(--ease) 0.16s forwards;
+      }
+      .hero-copy .lede {
+        margin-top: 20px;
+        color: var(--text-secondary);
+        font-size: 16.5px;
+        max-width: 480px;
+        opacity: 0;
+        animation: riseIn 0.7s var(--ease) 0.28s forwards;
+      }
+      .hero-actions {
+        margin-top: 32px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: riseIn 0.7s var(--ease) 0.38s forwards;
+      }
+      .hero-tools {
+        margin-top: 44px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: riseIn 0.7s var(--ease) 0.48s forwards;
+      }
+      .tool-chip {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.35s var(--ease),
+          border-color 0.3s ease,
+          background 0.3s ease;
+        position: relative;
+        animation: floatY 6s ease-in-out infinite;
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+        animation:
+          chipIn 0.55s var(--ease) forwards,
+          floatY 6s ease-in-out infinite;
+      }
+      .tool-chip svg,
+      .tool-chip img {
+        width: 25px;
+        height: 25px;
+      }
+      .tool-chip:nth-child(1) {
+        animation-delay: 0.55s, 1.2s;
+      }
+      .tool-chip:nth-child(2) {
+        animation-delay: 0.65s, 1.6s;
+      }
+      .tool-chip:nth-child(3) {
+        animation-delay: 0.75s, 2s;
+      }
+      .tool-chip:nth-child(4) {
+        animation-delay: 0.85s, 2.4s;
+      }
+      .tool-chip:nth-child(5) {
+        animation-delay: 0.95s, 2.8s;
+      }
+      .tool-chip:nth-child(6) {
+        animation-delay: 1.05s, 3.2s;
+      }
+      .tool-chip:hover {
+        transform: translateY(-5px) scale(1.08);
+        border-color: var(--border-strong);
+        background: var(--surface-hover);
+        z-index: 2;
+      }
+      .tool-chip[data-tip]::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 9px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+      .tool-chip[data-tip]:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      @keyframes chipIn {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes riseIn {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      .hero-portrait {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 1/1.02;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        opacity: 0;
+        animation: riseIn 0.8s var(--ease) 0.2s forwards;
+      }
+      .hero-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-badge {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-pill);
+        padding: 9px 14px;
+        font-size: 12.5px;
+        font-weight: 600;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.45;
+        }
+      }
+
+      /* ===========================================================
+         MARQUEE
+      =========================================================== */
+      .marquee-wrap {
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+        padding: 22px 0;
+        background: var(--surface);
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        gap: 44px;
+        animation: scrollX 32s linear infinite;
+      }
+      .marquee-wrap:hover .marquee-track {
+        animation-play-state: paused;
+      }
+      .marquee-track span {
+        font-size: 14px;
+        color: var(--text-secondary);
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .marquee-track span::before {
+        content: "✦";
+        color: var(--text-tertiary);
+        font-size: 11px;
+      }
+      @keyframes scrollX {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* =========================================================
+   TOOLS SECTION
+========================================================= */
+
+      .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      /* =========================================================
+   TOOL PILL
+========================================================= */
+
+      .tool-pill {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        padding: 13px 22px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-pill);
+
+        font-size: 14.5px;
+        font-weight: 600;
+
+        transition:
+          transform 0.3s var(--ease),
+          border-color 0.3s ease,
+          background 0.3s ease;
+      }
+
+      /* =========================================================
+   TOOL PILL HOVER
+========================================================= */
+
+      .tool-pill:hover {
+        transform: translateY(-3px);
+        border-color: var(--border-strong);
+        background: var(--surface-hover);
+      }
+
+      /* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+      .tool-pill .swatch {
+        width: 34px;
+        height: 34px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 34px;
+
+        border-radius: 8px;
+      }
+
+      /* =========================================================
+   TOOL ICON
+========================================================= */
+
+      .tool-pill .swatch svg {
+        width: 30px;
+        height: 30px;
+
+        display: block;
+        flex-shrink: 0;
+      }
+
+      /* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+      @media (max-width: 768px) {
+        .tools-grid {
+          gap: 12px;
+          max-width: 100%;
+        }
+
+        .tool-pill {
+          gap: 10px;
+          padding: 12px 18px;
+          font-size: 14px;
+        }
+
+        .tool-pill .swatch {
+          width: 32px;
+          height: 32px;
+          flex-basis: 32px;
+        }
+
+        .tool-pill .swatch svg {
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      /* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+      @media (max-width: 480px) {
+        .tools-grid {
+          gap: 10px;
+        }
+
+        .tool-pill {
+          gap: 9px;
+          padding: 11px 16px;
+          font-size: 13.5px;
+        }
+
+        .tool-pill .swatch {
+          width: 30px;
+          height: 30px;
+          flex-basis: 30px;
+        }
+
+        .tool-pill .swatch svg {
+          width: 26px;
+          height: 26px;
+        }
+      }
+      /* ===========================================================
+         ABOUT
+      =========================================================== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .about-media {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        aspect-ratio: 4/5;
+        background: var(--surface);
+      }
+      .about-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-copy .eyebrow {
+        margin-bottom: 16px;
+      }
+      .about-copy h2 {
+        font-size: clamp(26px, 3.4vw, 34px);
+      }
+      .about-copy p {
+        color: var(--text-secondary);
+        margin-top: 18px;
+        font-size: 15.5px;
+        max-width: 520px;
+      }
+      .about-facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .fact-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 18px;
+      }
+      .fact-card .label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-tertiary);
+        font-weight: 600;
+      }
+      .fact-card .value {
+        margin-top: 6px;
+        font-size: 14.5px;
+        font-weight: 600;
+      }
+
+      /* ===========================================================
+         SKILLS
+      =========================================================== */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .skill-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 26px 22px;
+        transition:
+          transform 0.35s var(--ease),
+          border-color 0.3s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border-strong);
+      }
+      .skill-card .icon-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .skill-card .icon-badge svg {
+        width: 20px;
+        height: 20px;
+      }
+      .skill-card h3 {
+        font-size: 17px;
+      }
+      .skill-card ul {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .skill-card li {
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .skill-card li::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--text-tertiary);
+        flex: none;
+      }
+
+      /* ===========================================================
+         PROJECTS
+      =========================================================== */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .project-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.4s var(--ease),
+          border-color 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--border-strong);
+      }
+      .project-media {
+        aspect-ratio: 16/10.5;
+        overflow: hidden;
+        position: relative;
+        background: var(--surface-2);
+      }
+      .project-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s var(--ease);
+      }
+      .project-card:hover .project-media img {
+        transform: scale(1.06);
+      }
+      .project-body {
+        padding: 26px;
+      }
+      .project-tag {
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-tertiary);
+      }
+      .project-body h3 {
+        font-size: 21px;
+        margin-top: 8px;
+      }
+      .project-body p {
+        margin-top: 10px;
+        color: var(--text-secondary);
+        font-size: 14.5px;
+      }
+      .project-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      .case-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: transparent;
+        border: 1px solid var(--border-strong);
+        color: var(--text-primary);
+        padding: 10px 16px;
+        border-radius: var(--radius-pill);
+        font-size: 13px;
+        font-weight: 600;
+        transition:
+          transform 0.3s var(--ease),
+          background 0.25s ease;
+      }
+      .case-btn:hover {
+        background: var(--surface-hover);
+        transform: translateY(-2px);
+      }
+      .case-btn svg {
+        width: 13px;
+        height: 13px;
+        transition: transform 0.3s var(--ease);
+      }
+      .case-btn:hover svg {
+        transform: translate(2px, -2px);
+      }
+
+      /* ===========================================================
+         MODAL / CASE STUDY
+      =========================================================== */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 300;
+        background: rgba(6, 6, 6, 0.82);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 60px 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        max-width: 760px;
+        width: 100%;
+        max-height: 82vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(24px) scale(0.98);
+        opacity: 0;
+        transition:
+          transform 0.4s var(--ease),
+          opacity 0.4s var(--ease);
+      }
+      .modal-overlay.open .modal {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      .modal-close {
+        position: sticky;
+        top: 18px;
+        margin-left: auto;
+        margin-right: 18px;
+        z-index: 2;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--surface);
+        border: 1px solid var(--border-strong);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+      }
+      .modal-hero {
+        aspect-ratio: 16/8;
+        overflow: hidden;
+      }
+      .modal-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .modal-content {
+        padding: 36px 40px 46px;
+        clear: both;
+      }
+      .modal-content .project-tag {
+      }
+      .modal-content h2 {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .modal-content .modal-lede {
+        color: var(--text-secondary);
+        margin-top: 12px;
+        font-size: 15px;
+      }
+      .modal-meta {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        margin-top: 22px;
+        padding: 18px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+      }
+      .modal-meta div .label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-tertiary);
+        font-weight: 600;
+      }
+      .modal-meta div .value {
+        font-size: 13.5px;
+        margin-top: 4px;
+        font-weight: 600;
+      }
+      .case-block {
+        margin-top: 30px;
+      }
+      .case-block h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-tertiary);
+        font-weight: 700;
+      }
+      .case-block p {
+        margin-top: 8px;
+        font-size: 14.5px;
+        color: var(--text-secondary);
+      }
+
+      /* ===========================================================
+         EXPERIENCE
+      =========================================================== */
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .exp-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .exp-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 26px 28px;
+        cursor: pointer;
+      }
+      .exp-head h3 {
+        font-size: 19px;
+        font-weight: 600;
+      }
+      .exp-head h3 span {
+        color: var(--text-tertiary);
+        font-weight: 500;
+      }
+      .exp-date {
+        font-size: 13px;
+        color: var(--text-secondary);
+        flex: none;
+        white-space: nowrap;
+      }
+      .exp-toggle {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--border-strong);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        transition:
+          transform 0.35s var(--ease),
+          background 0.25s ease;
+      }
+      .exp-item.open .exp-toggle {
+        transform: rotate(180deg);
+        background: var(--surface-2);
+      }
+      .exp-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s var(--ease);
+      }
+      .exp-item.open .exp-body {
+        max-height: 260px;
+      }
+      .exp-body-in {
+        padding: 0 28px 26px;
+      }
+      .exp-body-in li {
+        font-size: 14px;
+        color: var(--text-secondary);
+        padding-left: 16px;
+        position: relative;
+        margin-top: 9px;
+      }
+      .exp-body-in li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--text-tertiary);
+      }
+
+      /* ===========================================================
+   EDUCATION & CERTIFICATES WRAPPER
+=========================================================== */
+
+      .education-certificates-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* ===========================================================
+   REMOVE EXTRA SECTION SPACING
+=========================================================== */
+
+      .education-certificates-wrapper > section {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      /* ===========================================================
+   EDUCATION
+=========================================================== */
+
+      .edu-card {
+        width: 100%;
+        margin: 0;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+
+        padding: 30px;
+
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+
+        box-sizing: border-box;
+      }
+
+      .edu-icon {
+        width: 52px;
+        height: 52px;
+
+        border-radius: 14px;
+
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: none;
+      }
+
+      .edu-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .edu-card h3 {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+
+      .edu-card .school {
+        margin-top: 6px;
+
+        color: var(--text-secondary);
+        font-size: 14.5px;
+      }
+
+      .edu-card .year {
+        margin-top: 10px;
+
+        display: inline-block;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        color: var(--text-tertiary);
+
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      /* ===========================================================
+   CERTIFICATES
+=========================================================== */
+
+      .cert-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .cert-card {
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+
+        padding: 22px;
+
+        transition:
+          transform 0.35s var(--ease),
+          border-color 0.3s ease;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border-strong);
+      }
+
+      .cert-icon {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 10px;
+
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cert-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .cert-card h4 {
+        font-size: 15.5px;
+        line-height: 1.4;
+
+        margin-top: 16px;
+      }
+
+      .cert-card .org {
+        font-size: 13px;
+
+        color: var(--text-secondary);
+
+        margin-top: 5px;
+      }
+
+      .cert-card .date {
+        font-size: 12px;
+
+        color: var(--text-tertiary);
+
+        margin-top: 10px;
+      }
+
+      /* ===========================================================
+   AWARDS NOTE
+=========================================================== */
+
+      .awards-note {
+        max-width: 760px;
+
+        margin: 44px auto 0;
+
+        text-align: center;
+
+        color: var(--text-secondary);
+
+        font-size: 14px;
+
+        padding: 20px;
+
+        border: 1px dashed var(--border-strong);
+
+        border-radius: var(--radius-md);
+      }
+
+      /* ===========================================================
+   TABLET
+=========================================================== */
+
+      @media (max-width: 900px) {
+        .education-certificates-wrapper {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+      }
+
+      /* ===========================================================
+   MOBILE
+=========================================================== */
+
+      @media (max-width: 600px) {
+        .education-certificates-wrapper {
+          gap: 40px;
+        }
+
+        .edu-card {
+          padding: 22px;
+          gap: 16px;
+        }
+
+        .edu-icon {
+          width: 46px;
+          height: 46px;
+          border-radius: 12px;
+        }
+
+        .edu-icon svg {
+          width: 21px;
+          height: 21px;
+        }
+
+        .edu-card h3 {
+          font-size: 16px;
+        }
+
+        .cert-card {
+          padding: 20px;
+        }
+      }
+
+      /* ===========================================================
+         CONTACT
+      =========================================================== */
+      .contact-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-8) var(--space-6);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+      }
+      .contact-info h2 {
+        font-size: clamp(26px, 3.2vw, 36px);
+      }
+      .contact-info p {
+        color: var(--text-secondary);
+        margin-top: 16px;
+        font-size: 15px;
+        max-width: 400px;
+      }
+      .contact-links {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .contact-links a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14.5px;
+        font-weight: 500;
+      }
+      .contact-links a svg {
+        width: 16px;
+        height: 16px;
+        color: var(--text-secondary);
+      }
+      .social-row {
+        margin-top: 28px;
+        display: flex;
+        gap: 10px;
+      }
+      .social-row a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--border-strong);
+        background: var(--surface-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.3s var(--ease),
+          background 0.25s ease;
+      }
+      .social-row a:hover {
+        transform: translateY(-3px);
+        background: var(--surface-hover);
+      }
+      .social-row svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .form-field {
+        margin-bottom: 16px;
+      }
+      .form-field label {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        display: block;
+        margin-bottom: 8px;
+      }
+      .form-field input,
+      .form-field textarea {
+        width: 100%;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 13px 14px;
+        color: var(--text-primary);
+        font-size: 14px;
+        transition: border-color 0.25s ease;
+      }
+      .form-field input:focus,
+      .form-field textarea:focus {
+        outline: none;
+        border-color: var(--border-strong);
+      }
+      .form-field textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .field-error {
+        font-size: 12px;
+        color: #f87171;
+        margin-top: 6px;
+        min-height: 14px;
+      }
+      .form-success {
+        display: none;
+        align-items: center;
+        gap: 10px;
+        background: rgba(74, 222, 128, 0.1);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+        color: var(--success);
+        padding: 14px 16px;
+        border-radius: var(--radius-sm);
+        font-size: 13.5px;
+        font-weight: 600;
+        margin-top: 14px;
+      }
+      .form-success.show {
+        display: flex;
+      }
+
+      /* ===========================================================
+         FOOTER
+      =========================================================== */
+      /* ===========================================================
+   FOOTER
+=========================================================== */
+
+      .footer {
+        padding-top: var(--space-8);
+      }
+
+      .footer-media {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 16 / 6;
+        border: 1px solid var(--border);
+      }
+
+      .footer-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* ===========================================================
+   FOOTER NIGHT DRIVE ANIMATION
+=========================================================== */
+
+      .footer-media {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        aspect-ratio: 16 / 6;
+      }
+
+      /* ===========================================================
+   MAIN SCENE
+=========================================================== */
+
+      .night-drive {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 260px;
+        overflow: hidden;
+
+        background: #0a0a0a;
+      }
+
+      /* ===========================================================
+   SKY
+=========================================================== */
+
+      .sky {
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          to bottom,
+          #02040c 0%,
+          #09090a 35%,
+          #080a0e 68%,
+          #0a111b 100%
+        );
+
+        overflow: hidden;
+      }
+
+      /* ===========================================================
+   STARS
+=========================================================== */
+
+      .stars {
+        position: absolute;
+        inset: 0;
+      }
+
+      .stars i {
+        position: absolute;
+
+        width: 2px;
+        height: 2px;
+
+        border-radius: 50%;
+
+        background: #a8b4ca;
+
+        opacity: 0.7;
+
+        animation: starBlink 3s ease-in-out infinite;
+      }
+
+      .stars i:nth-child(1) {
+        top: 12%;
+        left: 8%;
+      }
+
+      .stars i:nth-child(2) {
+        top: 22%;
+        left: 16%;
+        animation-delay: 0.5s;
+      }
+
+      .stars i:nth-child(3) {
+        top: 9%;
+        left: 27%;
+        animation-delay: 1.2s;
+      }
+
+      .stars i:nth-child(4) {
+        top: 27%;
+        left: 38%;
+        animation-delay: 0.8s;
+      }
+
+      .stars i:nth-child(5) {
+        top: 14%;
+        left: 48%;
+        animation-delay: 1.7s;
+      }
+
+      .stars i:nth-child(6) {
+        top: 24%;
+        left: 59%;
+        animation-delay: 0.3s;
+      }
+
+      .stars i:nth-child(7) {
+        top: 10%;
+        left: 69%;
+        animation-delay: 1.4s;
+      }
+
+      .stars i:nth-child(8) {
+        top: 19%;
+        left: 79%;
+        animation-delay: 0.7s;
+      }
+
+      .stars i:nth-child(9) {
+        top: 31%;
+        left: 90%;
+        animation-delay: 1.9s;
+      }
+
+      .stars i:nth-child(10) {
+        top: 8%;
+        left: 94%;
+      }
+
+      .stars i:nth-child(11) {
+        top: 35%;
+        left: 5%;
+        animation-delay: 1.1s;
+      }
+
+      .stars i:nth-child(12) {
+        top: 17%;
+        left: 34%;
+      }
+
+      .stars i:nth-child(13) {
+        top: 30%;
+        left: 53%;
+        animation-delay: 1.6s;
+      }
+
+      .stars i:nth-child(14) {
+        top: 13%;
+        left: 84%;
+      }
+
+      .stars i:nth-child(15) {
+        top: 37%;
+        left: 72%;
+        animation-delay: 0.6s;
+      }
+
+      @keyframes starBlink {
+        0%,
+        100% {
+          opacity: 0.25;
+        }
+
+        50% {
+          opacity: 0.9;
+        }
+      }
+
+      /* ===========================================================
+   MOON
+=========================================================== */
+
+      .night-moon {
+        position: absolute;
+
+        top: 12%;
+        right: 13%;
+
+        width: 54px;
+        height: 54px;
+
+        border-radius: 50%;
+
+        background: #fafafa;
+
+        box-shadow:
+          0 0 20px rgba(0, 0, 0, 0.25),
+          0 0 45px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Dark overlay creates crescent effect */
+
+      .night-moon::after {
+        content: "";
+
+        position: absolute;
+
+        top: -4px;
+        right: -7px;
+
+        width: 54px;
+        height: 54px;
+
+        border-radius: 50%;
+
+        background: #02040c;
+      }
+
+      /* ===========================================================
+   CLOUDS
+=========================================================== */
+
+      .cloud {
+        position: absolute;
+
+        width: 105px;
+        height: 25px;
+
+        border-radius: 30px;
+
+        background: rgba(235, 225, 225, 0.28);
+
+        animation: cloudsMove 24s linear infinite;
+      }
+
+      .cloud span {
+        position: absolute;
+
+        bottom: 0;
+
+        border-radius: 50%;
+
+        background: rgba(243, 237, 237, 0.28);
+      }
+
+      .cloud span:nth-child(1) {
+        width: 38px;
+        height: 38px;
+        left: 12px;
+        bottom: 5px;
+      }
+
+      .cloud span:nth-child(2) {
+        width: 48px;
+        height: 48px;
+        left: 35px;
+        bottom: 3px;
+      }
+
+      .cloud span:nth-child(3) {
+        width: 32px;
+        height: 32px;
+        right: 8px;
+        bottom: 5px;
+      }
+
+      .cloud-1 {
+        top: 24%;
+        left: 8%;
+
+        animation-duration: 32s;
+      }
+
+      .cloud-2 {
+        top: 18%;
+        left: 65%;
+
+        transform: scale(0.75);
+
+        animation-duration: 38s;
+        animation-delay: -15s;
+      }
+
+      @keyframes cloudsMove {
+        0% {
+          transform: translateX(0);
+        }
+
+        50% {
+          transform: translateX(80px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      /* ===========================================================
+   MOUNTAINS
+=========================================================== */
+
+      .mountains {
+        position: absolute;
+
+        left: -10%;
+        bottom: 26%;
+
+        width: 120%;
+        height: 32%;
+
+        background-repeat: repeat-x;
+
+        animation: backgroundMove 18s linear infinite;
+      }
+
+      /* Back mountains */
+
+      .mountains-back {
+        background: linear-gradient(
+          135deg,
+          transparent 48%,
+          #041f0f 49%,
+          #011809 58%,
+          transparent 59%
+        );
+
+        background-size: 170px 100%;
+
+        opacity: 0.8;
+      }
+
+      /* ===========================================================
+   FOREST
+=========================================================== */
+
+      .forest {
+        position: absolute;
+
+        left: -5%;
+
+        bottom: 24%;
+
+        width: 110%;
+        height: 90px;
+
+        background-repeat: repeat-x;
+
+        animation: forestMove 7s linear infinite;
+      }
+
+      /* Far forest */
+
+      .forest-back {
+        background: linear-gradient(
+          135deg,
+          transparent 45%,
+          #082501 46%,
+          #02240d 62%,
+          transparent 63%
+        );
+
+        background-size: 55px 100%;
+
+        opacity: 0.8;
+
+        animation-duration: 11s;
+      }
+
+      /* Front forest */
+
+      .forest-front {
+        bottom: 21%;
+
+        height: 75px;
+
+        background: linear-gradient(
+          135deg,
+          transparent 44%,
+          #00421c 45%,
+          #02411c 65%,
+          transparent 66%
+        );
+
+        background-size: 42px 100%;
+
+        animation-duration: 7s;
+      }
+
+      /* ===========================================================
+   BACKGROUND MOVEMENT
+=========================================================== */
+
+      @keyframes backgroundMove {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-170px);
+        }
+      }
+
+      @keyframes forestMove {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-120px);
+        }
+      }
+
+      /* ===========================================================
+   ROAD
+=========================================================== */
+
+      .night-road {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 28%;
+
+        background: linear-gradient(to bottom, #20242b 0%, #111419 100%);
+
+        overflow: hidden;
+      }
+
+      /* Road upper edge */
+
+      .road-edge {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 3px;
+
+        background: rgba(5, 5, 5, 0.18);
+      }
+
+      /* ===========================================================
+   MOVING ROAD MARKINGS
+=========================================================== */
+
+      .road-lines {
+        position: absolute;
+
+        top: 50%;
+
+        left: 0;
+
+        width: 200%;
+
+        height: 5px;
+
+        display: flex;
+        gap: 45px;
+
+        animation: roadMove 1.4s linear infinite;
+      }
+
+      .road-lines span {
+        flex: 0 0 40px;
+
+        height: 4px;
+
+        background: #464644;
+
+        border-radius: 3px;
+      }
+
+      @keyframes roadMove {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-85px);
+        }
+      }
+
+      /* ===========================================================
+   CAR
+   IMPORTANT:
+   CAR NEVER MOVES
+=========================================================== */
+
+      .cartoon-car {
+        position: absolute;
+
+        z-index: 20;
+
+        left: 50%;
+        bottom: 18%;
+
+        width: 160px;
+        height: 78px;
+
+        transform: translateX(-50%);
+      }
+
+      /* ===========================================================
+   CAR SHADOW
+=========================================================== */
+
+      .car-shadow {
+        position: absolute;
+
+        left: 8px;
+        bottom: -4px;
+
+        width: 145px;
+        height: 10px;
+
+        border-radius: 50%;
+
+        background: rgba(75, 75, 75, 0.5);
+
+        filter: blur(4px);
+      }
+
+      /* ===========================================================
+   CAR BODY
+=========================================================== */
+
+      .car-body {
+        position: absolute;
+
+        left: 5px;
+        bottom: 17px;
+
+        width: 150px;
+        height: 39px;
+
+        border-radius: 20px 26px 7px 7px;
+
+        background: linear-gradient(
+          to bottom,
+          #ef3036 0%,
+          #c81727 65%,
+          #8d101c 100%
+        );
+
+        box-shadow:
+          inset 0 -4px 0 rgba(0, 0, 0, 0.18),
+          0 4px 8px rgba(0, 0, 0, 0.35);
+      }
+
+      /* ===========================================================
+   CAR ROOF
+=========================================================== */
+
+      .car-roof {
+        position: absolute;
+
+        left: 38px;
+        top: -27px;
+
+        width: 78px;
+        height: 32px;
+
+        background: #d21c2a;
+
+        border-radius: 45px 45px 0 0;
+
+        transform: skewX(-10deg);
+      }
+
+      /* ===========================================================
+   CAR WINDOWS
+=========================================================== */
+
+      .car-window {
+        position: absolute;
+
+        top: -22px;
+
+        height: 20px;
+
+        background: linear-gradient(135deg, #1a293c, #050b15);
+
+        border: 2px solid #a91724;
+      }
+
+      .car-window-1 {
+        left: 45px;
+
+        width: 30px;
+
+        border-radius: 13px 2px 2px 2px;
+      }
+
+      .car-window-2 {
+        left: 78px;
+
+        width: 30px;
+
+        border-radius: 2px 13px 2px 2px;
+      }
+
+      /* ===========================================================
+   DOOR
+=========================================================== */
+
+      .car-door {
+        position: absolute;
+
+        left: 76px;
+        top: 7px;
+
+        width: 1px;
+        height: 28px;
+
+        background: rgba(65, 0, 5, 0.4);
+      }
+
+      .door-handle {
+        position: absolute;
+
+        left: 86px;
+        top: 13px;
+
+        width: 10px;
+        height: 3px;
+
+        border-radius: 3px;
+
+        background: #ff8d85;
+      }
+
+      /* ===========================================================
+   HEADLIGHT
+=========================================================== */
+
+      .car-headlight {
+        position: absolute;
+
+        right: -2px;
+        top: 17px;
+
+        width: 8px;
+        height: 9px;
+
+        border-radius: 4px;
+
+        background: #e7e3cb;
+
+        box-shadow:
+          0 0 8px rgba(255, 244, 189, 0.9),
+          0 0 18px rgba(255, 244, 189, 0.35);
+      }
+
+      /* ===========================================================
+   TAIL LIGHT
+=========================================================== */
+
+      .car-taillight {
+        position: absolute;
+
+        left: -2px;
+        top: 18px;
+
+        width: 6px;
+        height: 9px;
+
+        border-radius: 2px;
+
+        background: #ff2632;
+
+        box-shadow: 0 0 7px rgba(255, 38, 50, 0.5);
+      }
+
+      /* ===========================================================
+   FRONT BUMPER
+=========================================================== */
+
+      .front-bumper {
+        position: absolute;
+
+        right: -5px;
+        bottom: 3px;
+
+        width: 12px;
+        height: 7px;
+
+        border-radius: 0 4px 4px 0;
+
+        background: #71101a;
+      }
+
+      /* ===========================================================
+   WHEELS
+=========================================================== */
+
+      .car-wheel {
+        position: absolute;
+
+        z-index: 30;
+
+        bottom: 3px;
+
+        width: 29px;
+        height: 29px;
+
+        border-radius: 50%;
+
+        background: #07090d;
+
+        border: 4px solid #151920;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+        animation: wheelRotate 0.55s linear infinite;
+      }
+
+      /* Front wheel */
+
+      .wheel-front {
+        right: 19px;
+      }
+
+      /* Back wheel */
+
+      .wheel-back {
+        left: 24px;
+      }
+
+      /* ===========================================================
+   WHEEL HUB
+=========================================================== */
+
+      .wheel-hub {
+        position: absolute;
+
+        inset: 4px;
+
+        border-radius: 50%;
+
+        background: #b9bec5;
+
+        border: 2px solid #727983;
+      }
+
+      /* Wheel spokes */
+
+      .wheel-hub span {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: 2px;
+        height: 9px;
+
+        transform-origin: center bottom;
+
+        background: #555b64;
+
+        border-radius: 2px;
+      }
+
+      .wheel-hub span:nth-child(1) {
+        transform: translate(-50%, -100%) rotate(0deg);
+      }
+
+      .wheel-hub span:nth-child(2) {
+        transform: translate(-50%, -100%) rotate(90deg);
+      }
+
+      .wheel-hub span:nth-child(3) {
+        transform: translate(-50%, -100%) rotate(180deg);
+      }
+
+      .wheel-hub span:nth-child(4) {
+        transform: translate(-50%, -100%) rotate(270deg);
+      }
+
+      /* ===========================================================
+   WHEEL ROTATION
+=========================================================== */
+
+      @keyframes wheelRotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+      @media (max-width: 700px) {
+        .night-drive {
+          min-height: 210px;
+        }
+
+        .night-moon {
+          width: 42px;
+          height: 42px;
+        }
+
+        .night-moon::after {
+          width: 42px;
+          height: 42px;
+        }
+
+        .cartoon-car {
+          transform: translateX(-50%) scale(0.82);
+          transform-origin: center bottom;
+        }
+
+        .forest {
+          bottom: 23%;
+        }
+
+        .night-road {
+          height: 27%;
+        }
+      }
+
+      /* ===========================================================
+   FOOTER MAIN
+=========================================================== */
+
+      .footer-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 44px 0;
+        flex-wrap: wrap;
+      }
+
+      /* ===========================================================
+   FOOTER BRAND
+=========================================================== */
+
+      .footer-brand {
+        width: 320px;
+      }
+
+      .footer-brand .brand {
+        font-size: 16px;
+      }
+
+      .footer-brand p {
+        margin-top: 12px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        max-width: 320px;
+        line-height: 1.6;
+      }
+
+      /* ===========================================================
+   SOCIAL ICONS
+=========================================================== */
+
+      .footer-social {
+        display: flex !important;
+        align-items: center;
+        justify-content: center !important;
+
+        width: 100%;
+        margin-top: 18px;
+
+        gap: 10px;
+      }
+
+      .footer-social a {
+        width: 36px;
+        height: 36px;
+
+        flex: 0 0 36px;
+
+        border-radius: 50%;
+
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition:
+          transform 0.3s var(--ease),
+          background 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        transform: translateY(-3px);
+
+        background: var(--surface-hover);
+        border-color: var(--border-strong);
+      }
+
+      .footer-social svg {
+        width: 17px;
+        height: 17px;
+        display: block;
+      }
+
+      /* ===========================================================
+   FOOTER LINKS
+=========================================================== */
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-end;
+      }
+
+      .footer-links a {
+        font-size: 14.5px;
+        color: var(--text-secondary);
+
+        transition: color 0.25s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--text-primary);
+      }
+
+      /* ===========================================================
+   FOOTER BOTTOM
+=========================================================== */
+
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+
+        padding: 26px 0 40px;
+
+        text-align: center;
+
+        color: var(--text-tertiary);
+
+        font-size: 13px;
+      }
+
+      /* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+      @media (max-width: 640px) {
+        .footer-main {
+          flex-direction: column;
+          gap: 32px;
+        }
+
+        .footer-brand {
+          width: 100%;
+        }
+
+        .footer-brand p {
+          max-width: 100%;
+        }
+
+        .footer-social {
+          width: 100%;
+          justify-content: center !important;
+        }
+
+        .footer-links {
+          width: 100%;
+          align-items: flex-start;
+        }
+      }
+
+      /* Placeholder art — swap for real photos via the REPLACE IMAGE comments */
+      .placeholder-avatar,
+      .placeholder-cover {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.06),
+            transparent 55%
+          ),
+          linear-gradient(150deg, #1c1c1c, #0a0a0a 70%);
+      }
+      .placeholder-avatar svg,
+      .placeholder-cover svg {
+        width: 34%;
+        height: 34%;
+        color: var(--text-tertiary);
+        opacity: 0.6;
+      }
+      .placeholder-cover {
+        position: relative;
+        overflow: hidden;
+      }
+      .placeholder-cover::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      /* ===========================================================
+         SCROLL REVEAL
+      =========================================================== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s var(--ease),
+          transform 0.7s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===========================================================
+         RESPONSIVE
+      =========================================================== */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-portrait {
+          order: -1;
+          max-width: 420px;
+          margin: 0 auto;
+          aspect-ratio: 1/1;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-media {
+          max-width: 420px;
+          margin: 0 auto;
+          aspect-ratio: 16/10;
+        }
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .cert-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .contact-wrap {
+          grid-template-columns: 1fr;
+          padding: var(--space-6) var(--space-4);
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .hero {
+          padding: 130px 0 var(--space-6);
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .hero-actions .btn {
+          width: 100%;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .cert-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-main {
+          flex-direction: column;
+        }
+        .footer-links {
+          align-items: flex-start;
+        }
+        .section-pad {
+          padding: var(--space-6) 0;
+        }
+        .contact-info {
+          order: 1;
+        }
+        .exp-head {
+          padding: 20px;
+        }
+        .modal-content {
+          padding: 28px 22px 36px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001s !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001s !important;
+          scroll-behavior: auto !important;
+        }
+        .tool-chip {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .hero-copy *,
+        .hero-portrait,
+        .hero-tools {
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+        }
+        .marquee-track {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =============================================================
+     NAVBAR
+============================================================= -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="brand">
+          <span class="brand-mark">
+            <img
+              src="logo.png"
+              alt="Muntasir Tamzid Logo"
+              width="40"
+              height="40"
+            />
+          </span>
+          Muntasir Tamzid
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a
+            href="https://drive.google.com/file/d/1XbkHsUe0kdfDVoYRJ0QYrp_ZAKeD4JrO/view?usp=sharing"
+            class="btn btn-primary"
+          >
+            DOWNLOAD CV
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#certificates" class="mobile-link">Certificates</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="#contact" class="btn btn-primary mobile-link">Let's Talk</a>
+    </div>
+
+    <main>
+      <!-- =============================================================
+     HERO / HOME
+============================================================= -->
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <!-- ========================================
+         HERO COPY
+    ========================================= -->
+          <div class="hero-copy">
+            <!-- Eyebrow -->
+            <span class="eyebrow">
+              <span class="dot"></span>
+              UI/UX Designer
+            </span>
+
+            <!-- Hero Heading -->
+
+            <h1>
+              I design
+              <span class="highlight">simple</span>,
+              <span class="highlight">useful</span> and
+              <span class="highlight">meaningful</span>
+              digital experiences.
+            </h1>
+
+            <!-- Hero Description -->
+            <p class="lede">
+              I'm Muntasir Tamzid, a UI/UX Designer focused on creating
+              intuitive digital products through thoughtful UX, clean interfaces
+              and purposeful design systems.
+            </p>
+
+            <!-- ========================================
+           HERO ACTIONS
+      ========================================= -->
+            <div class="hero-actions">
+              <!-- DOWNLOAD CV -->
+              <a
+                href="https://drive.google.com/file/d/1XbkHsUe0kdfDVoYRJ0QYrp_ZAKeD4JrO/view?usp=sharing"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DOWNLOAD CV
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+
+              <!-- ========================================
+             HIRE ME - GMAIL COMPOSE
+        ========================================= -->
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=muntasirtamzids@gmail.com&su=Hiring%20Inquiry%20-%20UI%2FUX%20Designer&body=Hello%20Muntasir%2C%0A%0AI%20am%20interested%20in%20hiring%20you%20for%20a%20UI%2FUX%20Design%20project.%0A%0AHere%20are%20some%20details%20about%20the%20project%3A%0A%0AProject%20Name%3A%0ACompany%2FOrganization%3A%0AProject%20Type%3A%0AExpected%20Timeline%3A%0A%0APlease%20let%20me%20know%20your%20availability%2C%20pricing%2C%20and%20how%20we%20can%20discuss%20the%20project%20further.%0A%0AThank%20you."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                HIRE ME
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+
+              <!-- VIEW MY WORK -->
+              <a href="#projects" class="btn btn-secondary">
+                View My Work
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- ========================================
+           ANIMATED TOOL ICON ROW
+      ========================================= -->
+            <div class="hero-tools" aria-label="Design tools I use">
+              <!-- ====================================
+             FIGMA
+        ===================================== -->
+              <span class="tool-chip" data-tip="Figma">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    fill="#0acf83"
+                    d="M8.0833 23.75a3.9167 3.9167 0 0 0 3.9167-3.9167v-3.9166H8.0833a3.9167 3.9167 0 1 0 0 7.8333Z"
+                  />
+
+                  <path
+                    fill="#a259ff"
+                    d="M4.1666 12a3.9167 3.9167 0 0 1 3.9167-3.9167H12v7.8334H8.0833A3.9167 3.9167 0 0 1 4.1666 12Z"
+                  />
+
+                  <path
+                    fill="#f24e1e"
+                    d="M4.1666 4.1667A3.9167 3.9167 0 0 1 8.0833.25H12v7.8333H8.0833a3.9167 3.9167 0 0 1-3.9167-3.9166Z"
+                  />
+
+                  <path
+                    fill="#ff7262"
+                    d="M12 .25h3.9167a3.9167 3.9167 0 1 1 0 7.8333H12V.25Z"
+                  />
+
+                  <path
+                    fill="#1abcfe"
+                    d="M19.8333 12a3.9167 3.9167 0 1 1-7.8333 0 3.9167 3.9167 0 0 1 7.8333 0Z"
+                  />
+                </svg>
+              </span>
+
+              <!-- ====================================
+             FIGJAM
+        ===================================== -->
+              <span class="tool-chip" data-tip="FigJam" style="color: #0acf83">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="4" />
+
+                  <path d="M8 9h8M8 13h5" />
+                </svg>
+              </span>
+
+              <!-- ====================================
+             PHOTOSHOP
+        ===================================== -->
+              <span
+                class="tool-chip"
+                data-tip="Photoshop"
+                style="color: #31a8ff"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="3" />
+
+                  <text
+                    x="6.5"
+                    y="16"
+                    font-size="9"
+                    fill="currentColor"
+                    stroke="none"
+                    font-family="sans-serif"
+                  >
+                    Ps
+                  </text>
+                </svg>
+              </span>
+
+              <!-- ====================================
+             ILLUSTRATOR
+        ===================================== -->
+              <span
+                class="tool-chip"
+                data-tip="Illustrator"
+                style="color: #ff9a00"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="3" />
+
+                  <text
+                    x="5.5"
+                    y="16"
+                    font-size="9"
+                    fill="currentColor"
+                    stroke="none"
+                    font-family="sans-serif"
+                  >
+                    Ai
+                  </text>
+                </svg>
+              </span>
+
+              <!-- ====================================
+             FRAMER
+        ===================================== -->
+              <span class="tool-chip" data-tip="Framer" style="color: #ffffff">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4 4h16v6.5h-8L4 4zM4 10.5h8l8 7H12v6.5l-8-7v-6.5z"
+                  />
+                </svg>
+              </span>
+
+              <!-- ====================================
+             GITHUB
+        ===================================== -->
+              <span class="tool-chip" data-tip="GitHub" style="color: #ffffff">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 8-6 8-11.2A11.5 11.5 0 0 0 12 .5z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- ========================================
+         HERO PORTRAIT
+    ========================================= -->
+          <div class="hero-portrait">
+            <!-- Profile Image -->
+            <div class="placeholder-avatar">
+              <img
+                src="file_00000000929c821197cba64a4621f9c1.png"
+                alt="Muntasir Tamzid"
+              />
+            </div>
+
+            <!-- Availability Badge -->
+            <div class="hero-badge">
+              <span class="dot"></span>
+              Available for work
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     TOOLS MARQUEE
+============================================================= -->
+      <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Figma</span><span>UX Research</span><span>Prototyping</span
+          ><span>Design Systems</span> <span>Framer</span><span>Photoshop</span
+          ><span>Illustrator</span><span>Wireframing</span>
+          <span>Usability Testing</span><span>Interaction Design</span>
+          <span>Figma</span><span>UX Research</span><span>Prototyping</span
+          ><span>Design Systems</span> <span>Framer</span><span>Photoshop</span
+          ><span>Illustrator</span><span>Wireframing</span>
+          <span>Usability Testing</span><span>Interaction Design</span>
+        </div>
+      </div>
+
+      <!-- =============================================================
+     TOOLS I DESIGN WITH
+============================================================= -->
+      <section class="section-pad reveal" id="tools">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Tech Stack</span>
+            <h2>Tools I Design With</h2>
+            <p>
+              A curated set of tools I rely on to research, design and prototype
+              digital products.
+            </p>
+          </div>
+          <div class="tools-grid">
+            <!-- Figma -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                  <path
+                    fill="#0acf83"
+                    d="M8.0833 23.75a3.9167 3.9167 0 0 0 3.9167-3.9167v-3.9166H8.0833a3.9167 3.9167 0 1 0 0 7.8333Z"
+                  />
+                  <path
+                    fill="#a259ff"
+                    d="M4.1666 12a3.9167 3.9167 0 0 1 3.9167-3.9167H12v7.8334H8.0833A3.9167 3.9167 0 0 1 4.1666 12Z"
+                  />
+                  <path
+                    fill="#f24e1e"
+                    d="M4.1666 4.1667A3.9167 3.9167 0 0 1 8.0833.25H12v7.8333H8.0833a3.9167 3.9167 0 0 1-3.9167-3.9166Z"
+                  />
+                  <path
+                    fill="#ff7262"
+                    d="M12 .25h3.9167a3.9167 3.9167 0 1 1 0 7.8333H12V.25Z"
+                  />
+                  <path
+                    fill="#1abcfe"
+                    d="M19.8333 12a3.9167 3.9167 0 1 1-7.8333 0 3.9167 3.9167 0 0 1 7.8333 0Z"
+                  />
+                </svg>
+              </span>
+              Figma
+            </span>
+
+            <!-- FigJam -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="42" height="42">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="4"
+                    fill="#FF7262"
+                  />
+                  <circle cx="8" cy="8" r="1.5" fill="#fff" />
+                  <circle cx="12" cy="12" r="1.5" fill="#fff" />
+                  <circle cx="16" cy="8" r="1.5" fill="#fff" />
+                  <path
+                    d="M7 17c2-2 4-2 6 0s4 2 5 0"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              FigJam
+            </span>
+
+            <!-- Photoshop -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="36" height="36">
+                  <rect
+                    x="2.5"
+                    y="2.5"
+                    width="19"
+                    height="19"
+                    rx="3"
+                    fill="#001e36"
+                  />
+                  <text
+                    x="5"
+                    y="16"
+                    fill="#31a8ff"
+                    font-size="9"
+                    font-weight="700"
+                    font-family="Arial"
+                  >
+                    Ps
+                  </text>
+                </svg>
+              </span>
+              Photoshop
+            </span>
+
+            <!-- Illustrator -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="36" height="36">
+                  <rect
+                    x="2.5"
+                    y="2.5"
+                    width="19"
+                    height="19"
+                    rx="3"
+                    fill="#330000"
+                  />
+                  <text
+                    x="5"
+                    y="16"
+                    fill="#ff9a00"
+                    font-size="9"
+                    font-weight="700"
+                    font-family="Arial"
+                  >
+                    Ai
+                  </text>
+                </svg>
+              </span>
+              Illustrator
+            </span>
+
+            <!-- Framer -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="38" height="38">
+                  <path d="M5 3h14v6H5l7 6H5v6l7-6V9L5 3Z" fill="#fff" />
+                </svg>
+              </span>
+              Framer
+            </span>
+
+            <!-- Design Systems -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="36" height="36">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1.5"
+                    fill="#7C5CFC"
+                  />
+                  <rect
+                    x="14"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1.5"
+                    fill="#A78BFA"
+                  />
+                  <rect
+                    x="3"
+                    y="14"
+                    width="7"
+                    height="7"
+                    rx="1.5"
+                    fill="#C4B5FD"
+                  />
+                  <rect
+                    x="14"
+                    y="14"
+                    width="7"
+                    height="7"
+                    rx="1.5"
+                    fill="#8B5CF6"
+                  />
+                </svg>
+              </span>
+              Design Systems
+            </span>
+
+            <!-- User Research -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="36" height="36">
+                  <circle cx="10" cy="10" r="6" fill="#4F8CFF" />
+                  <circle cx="10" cy="10" r="3" fill="#BBD3FF" />
+                  <path
+                    d="m15 15 5 5"
+                    stroke="#4F8CFF"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              User Research
+            </span>
+
+            <!-- Prototyping -->
+            <span class="tool-pill">
+              <span class="swatch">
+                <svg viewBox="0 0 24 24" fill="none" width="36" height="36">
+                  <circle cx="6" cy="6" r="3" fill="#FF6B6B" />
+                  <circle cx="18" cy="12" r="3" fill="#FFD166" />
+                  <circle cx="6" cy="18" r="3" fill="#06D6A0" />
+                  <path
+                    d="M8.5 7.5 15.5 11M8.5 16.5 15.5 13"
+                    stroke="#aaa"
+                    stroke-width="1.8"
+                  />
+                </svg>
+              </span>
+              Prototyping
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     ABOUT
+============================================================= -->
+      <section class="section-pad reveal" id="about">
+        <div class="container about-grid">
+          <div class="about-media">
+            <img
+              src="myuniversity.png"
+              alt="myuniversity"
+              class="myuniversity"
+            />
+            <div class="placeholder-cover"></div>
+          </div>
+          <div class="about-copy">
+            <span class="eyebrow">About Me</span>
+            <h2>
+              Turning complex problems into simple, intuitive experiences.
+            </h2>
+            <p>
+              <!-- REPLACE ABOUT TEXT -->I'm a UI/UX Designer passionate about
+              transforming complex problems into simple, intuitive and visually
+              engaging digital experiences. I enjoy researching user needs,
+              structuring information, designing interfaces and refining
+              interactions that make products easier and more enjoyable to use.
+            </p>
+            <div class="about-facts">
+              <div class="fact-card">
+                <div class="fact-icon fact-icon-focus">
+                  <!-- Focus -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="8"
+                      fill="#7C5CFC"
+                      opacity="0.18"
+                    />
+                    <circle cx="12" cy="12" r="4.5" fill="#7C5CFC" />
+                    <circle cx="12" cy="12" r="2" fill="#FFFFFF" />
+                    <path
+                      d="M12 2.5V5M12 19V21.5M2.5 12H5M19 12H21.5"
+                      stroke="#7C5CFC"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="label">Focus</div>
+                  <div class="value">Product &amp; UX Design</div>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon fact-icon-location">
+                  <!-- Location -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M20 10.5C20 15.5 12 21 12 21S4 15.5 4 10.5a8 8 0 1 1 16 0Z"
+                      fill="#FF6B6B"
+                      opacity="0.18"
+                    />
+                    <path
+                      d="M20 10.5C20 15.5 12 21 12 21S4 15.5 4 10.5a8 8 0 1 1 16 0Z"
+                      stroke="#FF6B6B"
+                      stroke-width="1.7"
+                    />
+                    <circle cx="12" cy="10.5" r="2.7" fill="#FF6B6B" />
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="label">Based in</div>
+                  <div class="value">Bangladesh</div>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon fact-icon-education">
+                  <!-- Education -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 4L21 9L12 14L3 9L12 4Z"
+                      fill="#4F8CFF"
+                      opacity="0.2"
+                    />
+                    <path
+                      d="M12 4L21 9L12 14L3 9L12 4Z"
+                      stroke="#4F8CFF"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 11.2V16C6 17.7 8.7 19 12 19C15.3 19 18 17.7 18 16V11.2"
+                      stroke="#4F8CFF"
+                      stroke-width="1.7"
+                    />
+                    <path
+                      d="M21 9V15"
+                      stroke="#4F8CFF"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="label">Education</div>
+                  <div class="value">B.Sc. in CSE, 2025</div>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon fact-icon-work">
+                  <!-- Open to Work -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="3"
+                      y="7"
+                      width="18"
+                      height="13"
+                      rx="2.5"
+                      fill="#06D6A0"
+                      opacity="0.16"
+                    />
+                    <rect
+                      x="3"
+                      y="7"
+                      width="18"
+                      height="13"
+                      rx="2.5"
+                      stroke="#06D6A0"
+                      stroke-width="1.7"
+                    />
+                    <path
+                      d="M8 7V5.5C8 4.4 8.9 3.5 10 3.5H14C15.1 3.5 16 4.4 16 5.5V7"
+                      stroke="#06D6A0"
+                      stroke-width="1.7"
+                    />
+                    <path d="M3 12H21" stroke="#06D6A0" stroke-width="1.7" />
+                    <rect
+                      x="10"
+                      y="10.5"
+                      width="4"
+                      height="3"
+                      rx="0.8"
+                      fill="#06D6A0"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="label">Currently</div>
+                  <div class="value">Open to work</div>
+                </div>
+              </div>
+
+              <div
+                class="hero-tools"
+                aria-label="Design tools and social links"
+              >
+                <!-- Figma -->
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Figma"
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      fill="#0acf83"
+                      d="M8.0833 23.75a3.9167 3.9167 0 0 0 3.9167-3.9167v-3.9166H8.0833a3.9167 3.9167 0 1 0 0 7.8333Z"
+                    />
+                    <path
+                      fill="#a259ff"
+                      d="M4.1666 12a3.9167 3.9167 0 0 1 3.9167-3.9167H12v7.8334H8.0833A3.9167 3.9167 0 0 1 4.1666 12Z"
+                    />
+                    <path
+                      fill="#f24e1e"
+                      d="M4.1666 4.1667A3.9167 3.9167 0 0 1 8.0833.25H12v7.8333H8.0833a3.9167 3.9167 0 0 1-3.9167-3.9166Z"
+                    />
+                    <path
+                      fill="#ff7262"
+                      d="M12 .25h3.9167a3.9167 3.9167 0 1 1 0 7.8333H12V.25Z"
+                    />
+                    <path
+                      fill="#1abcfe"
+                      d="M19.8333 12a3.9167 3.9167 0 1 1-7.8333 0 3.9167 3.9167 0 0 1 7.8333 0Z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- Dribbble -->
+                <a
+                  href="https://dribbble.com/muntasir-tamzid-shuvin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Dribbble"
+                  style="color: #ea4c89"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1 0 12 22.5 10.5 10.5 0 0 0 12 1.5zm6.9 9.2a17.7 17.7 0 0 0-5.5-.1c-.2-.5-.4-1-.7-1.5a17.5 17.5 0 0 0 4.3-3.4 8.4 8.4 0 0 1 1.9 5zm-3.2-6.2a16 16 0 0 1-3.8 3 39 39 0 0 0-2.4-3.5A8.4 8.4 0 0 1 12 3a8.5 8.5 0 0 1 3.7 1.5zM7.9 4.7a37 37 0 0 1 2.4 3.5A31.7 31.7 0 0 1 4.2 10 8.5 8.5 0 0 1 7.9 4.7zM3.5 12v-.4a33.5 33.5 0 0 0 7.7-2c.2.4.4.9.6 1.3-4.8 1.4-6.8 4.4-7.1 4.9A8.5 8.5 0 0 1 3.5 12zm2.2 5.2c.2-.4 1.8-3.1 6.7-4.6.8 2.1 1.1 3.9 1.2 4.5a8.5 8.5 0 0 1-7.9.1zm9.7-1a25.4 25.4 0 0 0-1.1-4.1c2.1-.3 3.9-.1 4.5 0a8.5 8.5 0 0 1-3.4 4.1z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- Behance -->
+                <a
+                  href="https://www.behance.net/muntasishuvin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Behance"
+                  style="color: #1769ff"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M9.2 11.1c1.5-.7 2.2-1.8 2.2-3.1 0-2.5-2-4-4.7-4H1v16h6.1c3.2 0 5.1-1.6 5.1-4.3 0-2.2-1.1-3.6-3-4.6zM4.8 7.2h1.7c1.3 0 2.1.5 2.1 1.6s-.8 1.7-2.1 1.7H4.8V7.2zm1.9 9.2H4.8v-3.1h1.9c1.5 0 2.3.5 2.3 1.6s-.8 1.5-2.3 1.5z"
+                    />
+                    <path
+                      d="M18.2 8.3c-3.6 0-5.8 2.4-5.8 5.9s2.2 5.9 5.9 5.9c2.8 0 4.8-1.4 5.4-3.8h-3.3c-.4.9-1.1 1.3-2.1 1.3-1.4 0-2.3-.9-2.4-2.5H24v-.9c0-3.5-2.2-5.9-5.8-5.9zm-2.3 4.6c.2-1.4 1-2.2 2.3-2.2s2.1.8 2.3 2.2h-4.6z"
+                    />
+                    <path d="M16 5h5v1.5h-5z" />
+                  </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/in/muntasir-tamzid-shuvin-778157352/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="LinkedIn"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <!-- Blue circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#0A66C2" />
+
+                    <!-- White LinkedIn "in" -->
+                    <path
+                      fill="#FFFFFF"
+                      d="M8.05 9.15H5.1V19h2.95V9.15ZM6.58 4.25a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44ZM19.9 13.36c0-2.97-1.61-4.35-3.76-4.35-1.73 0-2.5.95-2.93 1.62V9.15h-2.95V19h2.95v-5.27c0-1.39.26-2.73 1.98-2.73 1.69 0 1.71 1.58 1.71 2.82V19h2.95v-5.64Z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a
+                  href="https://github.com/MT-Python"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="GitHub"
+                  style="color: #ffffff"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 8-6 8-11.2A11.5 11.5 0 0 0 12 .5z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Facebook"
+                  aria-label="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <!-- Blue circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1877F2" />
+
+                    <!-- White Facebook "f" -->
+                    <path
+                      fill="#FFFFFF"
+                      d="M13.55 20v-7h2.35l.35-2.75h-2.7V8.5c0-.8.22-1.35 1.4-1.35h1.5V4.7c-.26-.04-1.15-.1-2.2-.1-2.18 0-3.67 1.33-3.67 3.78v1.87H8.1V13h2.48v7h2.97Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     SKILLS
+============================================================= -->
+      <section class="section-pad reveal" id="skills">
+        <div class="container">
+          <!-- ========================================
+         SECTION HEADER
+    ========================================= -->
+          <div class="section-head">
+            <span class="eyebrow">What I Do</span>
+
+            <h2>Skills &amp; Expertise</h2>
+
+            <p>
+              I combine user research, thoughtful interface design and rapid
+              prototyping to create digital experiences that are intuitive,
+              accessible and visually engaging.
+            </p>
+          </div>
+
+          <!-- ========================================
+         SKILLS GRID
+    ========================================= -->
+          <div class="skills-grid">
+            <!-- ======================================
+           UX DESIGN
+      ======================================= -->
+            <div class="skill-card">
+              <div class="icon-badge" style="color: #8b5cf6">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="11" cy="11" r="7" />
+
+                  <path d="M21 21l-4.3-4.3" />
+                </svg>
+              </div>
+
+              <h3>UX Design</h3>
+
+              <p class="skill-description">
+                Understanding users and transforming their needs into simple,
+                intuitive and meaningful experiences.
+              </p>
+
+              <ul>
+                <li>User Research &amp; Discovery</li>
+                <li>User Personas &amp; Empathy Maps</li>
+                <li>User Journey Mapping</li>
+                <li>Information Architecture</li>
+                <li>User Flows &amp; Task Flows</li>
+                <li>Usability Testing</li>
+              </ul>
+            </div>
+
+            <!-- ======================================
+           UI DESIGN
+      ======================================= -->
+            <div class="skill-card">
+              <div class="icon-badge" style="color: #3b82f6">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="3" />
+
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+              </div>
+
+              <h3>UI Design</h3>
+
+              <p class="skill-description">
+                Creating clean, modern interfaces with a strong focus on
+                clarity, consistency and visual hierarchy.
+              </p>
+
+              <ul>
+                <li>Visual &amp; Interface Design</li>
+                <li>Responsive Web Design</li>
+                <li>Design Systems</li>
+                <li>Typography &amp; Visual Hierarchy</li>
+                <li>Color &amp; Accessibility</li>
+                <li>Reusable Components</li>
+              </ul>
+            </div>
+
+            <!-- ======================================
+           PROTOTYPING
+      ======================================= -->
+            <div class="skill-card">
+              <div class="icon-badge" style="color: #ec4899">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M4 19h16" />
+
+                  <path d="M4 15l4-4 3 3 5-6 4 4" />
+
+                  <circle
+                    cx="8"
+                    cy="11"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+
+                  <circle
+                    cx="11"
+                    cy="14"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+
+                  <circle
+                    cx="16"
+                    cy="8"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </div>
+
+              <h3>Prototyping</h3>
+
+              <p class="skill-description">
+                Turning ideas into interactive experiences to validate concepts,
+                interactions and user flows before development.
+              </p>
+
+              <ul>
+                <li>Wireframing</li>
+                <li>Low-Fidelity Prototypes</li>
+                <li>High-Fidelity Prototypes</li>
+                <li>Interactive Prototypes</li>
+                <li>Micro-Interactions</li>
+                <li>Design Validation</li>
+              </ul>
+            </div>
+
+            <!-- ======================================
+           TOOLS
+      ======================================= -->
+            <div class="skill-card">
+              <div class="icon-badge" style="color: #f59e0b">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2z"
+                  />
+                </svg>
+              </div>
+
+              <h3>Design Tools</h3>
+
+              <p class="skill-description">
+                Using modern design tools to explore ideas, build systems and
+                deliver polished digital products.
+              </p>
+
+              <ul>
+                <li>Figma &amp; FigJam</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Framer</li>
+                <li>Design System Workflows</li>
+                <li>Prototyping &amp; Collaboration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     PROJECTS
+============================================================= -->
+      <section class="section-pad reveal" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Selected Work</span>
+            <h2>Selected Work</h2>
+            <p>
+              A few sample projects exploring product thinking, UX strategy and
+              interface design. Placeholder work for demonstration.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- PROJECT 01 -->
+            <!-- PROJECT 01 — Nexora -->
+            <article class="project-card">
+              <div class="project-media">
+                <img
+                  src="https://cdn.dribbble.com/userupload/48794416/file/0ede72b039956100ea9b69bc5f28f7bf.png?resize=1024x768&vertical=center"
+                  alt="Nexora — UI/UX Design"
+                />
+              </div>
+
+              <div class="project-body">
+                <span class="project-tag">UI/UX Design · Digital Product</span>
+
+                <h3>Nexora</h3>
+
+                <p>
+                  A modern digital product exploration focused on creating a
+                  clean, engaging and intuitive user experience.
+                </p>
+
+                <div class="project-actions">
+                  <a
+                    class="case-btn"
+                    href="https://dribbble.com/shots/27669783-Nexora"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Dribbble
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 02 — Digital Experiences -->
+            <article class="project-card">
+              <div class="project-media">
+                <img
+                  src="https://cdn.dribbble.com/userupload/48794508/file/9a1f22fa1965916e78e237986673cb0a.png?resize=1024x768&vertical=center"
+                  alt="Digital Experiences — UI/UX Design"
+                />
+              </div>
+
+              <div class="project-body">
+                <span class="project-tag"
+                  >UI/UX Design · Digital Experience</span
+                >
+
+                <h3>Digital Experiences</h3>
+
+                <p>
+                  A visual exploration of modern digital experiences with a
+                  focus on clarity, usability and engaging interface design.
+                </p>
+
+                <div class="project-actions">
+                  <a
+                    class="case-btn"
+                    href="https://dribbble.com/shots/27669796-Digital-Experiences"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Dribbble
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 03 — Aquascape -->
+            <article class="project-card">
+              <div class="project-media">
+                <img
+                  src="https://cdn.dribbble.com/userupload/48794570/file/f3d46fc54b265d30eecdfa2522db88b2.png?resize=1024x768&vertical=center"
+                  alt="Practice01 — Aquascape"
+                />
+              </div>
+
+              <div class="project-body">
+                <span class="project-tag">Visual Design · UI/UX Practice</span>
+
+                <h3>Practice01 — Aquascape</h3>
+
+                <p>
+                  A creative visual design practice inspired by aquatic
+                  environments, combining natural aesthetics with modern digital
+                  composition.
+                </p>
+
+                <div class="project-actions">
+                  <a
+                    class="case-btn"
+                    href="https://dribbble.com/shots/27669809-Practice01-Aquascape"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Dribbble
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 04 — Happy Cat -->
+            <article class="project-card">
+              <div class="project-media">
+                <img
+                  src="https://cdn.dribbble.com/userupload/48794621/file/8e5973764cd883694d813c53be9485cb.png?resize=1024x768&vertical=center"
+                  alt="Practice02 — Happy Cat"
+                />
+              </div>
+
+              <div class="project-body">
+                <span class="project-tag">Visual Design · UI/UX Practice</span>
+
+                <h3>Practice02 — Happy Cat</h3>
+
+                <p>
+                  A playful visual design exploration created to build a
+                  friendly, engaging and visually appealing experience.
+                </p>
+
+                <div class="project-actions">
+                  <a
+                    class="case-btn"
+                    href="https://dribbble.com/shots/27669828-Practice02-Happy-Cat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Dribbble
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 05 — Coffee -->
+            <article class="project-card">
+              <div class="project-media">
+                <img
+                  src="https://cdn.dribbble.com/userupload/48794632/file/8ceb2cb16d5b11faeb967e7955935c5f.png?resize=1024x768&vertical=center"
+                  alt="Practice03 — Coffee"
+                />
+              </div>
+
+              <div class="project-body">
+                <span class="project-tag">Visual Design · UI/UX Practice</span>
+
+                <h3>Practice03 — Coffee</h3>
+
+                <p>
+                  A warm and minimal coffee-themed visual exploration focused on
+                  creating an inviting and memorable digital aesthetic.
+                </p>
+
+                <div class="project-actions">
+                  <a
+                    class="case-btn"
+                    href="https://dribbble.com/shots/27669833-Practice03-Coffee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on Dribbble
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     EXPERIENCE
+============================================================= -->
+      <section class="section-pad reveal" id="experience">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Experience</span>
+          </div>
+
+          <div class="exp-list">
+            <div class="exp-item open">
+              <div class="exp-head" data-exp>
+                <h3>
+                  AI Driven Freelancing Trainee —
+                  <span>SkyTech Global LTD</span>
+                </h3>
+
+                <div style="display: flex; align-items: center; gap: 14px">
+                  <span class="exp-date">2026 — Present</span>
+
+                  <span class="exp-toggle">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <div class="exp-body">
+                <div class="exp-body-in">
+                  <ul>
+                    <li>
+                      Developing practical skills in UI/UX design and creating
+                      user-centered digital experiences.
+                    </li>
+
+                    <li>
+                      Learning and applying digital marketing strategies for
+                      online products and services.
+                    </li>
+
+                    <li>
+                      Using AI-powered tools to improve design workflows,
+                      research, ideation, and freelancing productivity.
+                    </li>
+
+                    <li>
+                      Working on practical design projects including interfaces,
+                      landing pages, visual design, and digital experiences.
+                    </li>
+
+                    <li>
+                      Developing professional freelancing skills including
+                      project communication, presentation, and client-oriented
+                      design delivery.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+     EDUCATION & CERTIFICATES
+============================================================= -->
+
+      <div class="education-certificates-wrapper">
+        <!-- EDUCATION -->
+        <section class="section-pad reveal" id="education">
+          <div class="container">
+            <div class="section-head">
+              <span class="eyebrow">Education</span>
+              <h2>Academic Background</h2>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                  <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" />
+                </svg>
+              </div>
+
+              <div>
+                <h3>Bachelor of Science in Computer Science and Engineering</h3>
+
+                <div class="school">Daffodil International University</div>
+
+                <span class="year"> Passing Year — 2025 </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section class="section-pad reveal" id="certificates">
+          <div class="container">
+            <div class="section-head">
+              <span class="eyebrow">Recognition</span>
+
+              <h2>Certificates &amp; Training</h2>
+            </div>
+
+            <div class="cert-grid">
+              <!-- Certificate 01 -->
+              <div class="cert-card">
+                <div class="cert-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5" />
+                  </svg>
+                </div>
+
+                <h4>AI Driven Freelancing Training</h4>
+
+                <div class="org">SkyTech Global LTD</div>
+
+                <div class="date">Expected Completion · 27 August 2026</div>
+              </div>
+
+              <!-- Certificate 02 -->
+              <div class="cert-card">
+                <div class="cert-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path d="M9 12l2 2 4-4" />
+                    <circle cx="12" cy="12" r="9" />
+                  </svg>
+                </div>
+
+                <h4>Full Stack SQA &amp; Software Test Automation</h4>
+
+                <div class="org">Road to SDET Online Academy</div>
+
+                <div class="date">Issued · February 15, 2026</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- =============================================================
+     CONTACT
+============================================================= -->
+      <section class="section-pad reveal" id="contact">
+        <div class="container">
+          <div class="contact-wrap">
+            <div class="contact-info">
+              <span class="eyebrow">Get In Touch</span>
+              <h2 style="margin-top: 16px">
+                Have a project in mind? Let's talk.
+              </h2>
+              <p>
+                Whether you have a product idea, design challenge or
+                collaboration opportunity, I'd love to hear about it.
+              </p>
+
+              <div class="contact-links">
+                <a href="mailto:muntasir.tamzid06@gmail.com">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                  muntasirtamzids@gmail.com
+                </a>
+                <a href="tel:01608640089">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.5 2z"
+                    />
+                  </svg>
+                  +8801608640089
+                </a>
+              </div>
+
+              <!-- SOCIAL LINKS -->
+              <div
+                class="hero-tools"
+                aria-label="Design tools and social links"
+              >
+                <!-- Figma -->
+
+                <!-- Dribbble -->
+                <a
+                  href="https://dribbble.com/muntasir-tamzid-shuvin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Dribbble"
+                  style="color: #ea4c89"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1 0 12 22.5 10.5 10.5 0 0 0 12 1.5zm6.9 9.2a17.7 17.7 0 0 0-5.5-.1c-.2-.5-.4-1-.7-1.5a17.5 17.5 0 0 0 4.3-3.4 8.4 8.4 0 0 1 1.9 5zm-3.2-6.2a16 16 0 0 1-3.8 3 39 39 0 0 0-2.4-3.5A8.4 8.4 0 0 1 12 3a8.5 8.5 0 0 1 3.7 1.5zM7.9 4.7a37 37 0 0 1 2.4 3.5A31.7 31.7 0 0 1 4.2 10 8.5 8.5 0 0 1 7.9 4.7zM3.5 12v-.4a33.5 33.5 0 0 0 7.7-2c.2.4.4.9.6 1.3-4.8 1.4-6.8 4.4-7.1 4.9A8.5 8.5 0 0 1 3.5 12zm2.2 5.2c.2-.4 1.8-3.1 6.7-4.6.8 2.1 1.1 3.9 1.2 4.5a8.5 8.5 0 0 1-7.9.1zm9.7-1a25.4 25.4 0 0 0-1.1-4.1c2.1-.3 3.9-.1 4.5 0a8.5 8.5 0 0 1-3.4 4.1z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- Behance -->
+                <a
+                  href="https://www.behance.net/muntasishuvin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Behance"
+                  style="color: #1769ff"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M9.2 11.1c1.5-.7 2.2-1.8 2.2-3.1 0-2.5-2-4-4.7-4H1v16h6.1c3.2 0 5.1-1.6 5.1-4.3 0-2.2-1.1-3.6-3-4.6zM4.8 7.2h1.7c1.3 0 2.1.5 2.1 1.6s-.8 1.7-2.1 1.7H4.8V7.2zm1.9 9.2H4.8v-3.1h1.9c1.5 0 2.3.5 2.3 1.6s-.8 1.5-2.3 1.5z"
+                    />
+                    <path
+                      d="M18.2 8.3c-3.6 0-5.8 2.4-5.8 5.9s2.2 5.9 5.9 5.9c2.8 0 4.8-1.4 5.4-3.8h-3.3c-.4.9-1.1 1.3-2.1 1.3-1.4 0-2.3-.9-2.4-2.5H24v-.9c0-3.5-2.2-5.9-5.8-5.9zm-2.3 4.6c.2-1.4 1-2.2 2.3-2.2s2.1.8 2.3 2.2h-4.6z"
+                    />
+                    <path d="M16 5h5v1.5h-5z" />
+                  </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/in/muntasir-tamzid-shuvin-778157352/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="LinkedIn"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <!-- Blue circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#0A66C2" />
+
+                    <!-- White LinkedIn "in" -->
+                    <path
+                      fill="#FFFFFF"
+                      d="M8.05 9.15H5.1V19h2.95V9.15ZM6.58 4.25a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44ZM19.9 13.36c0-2.97-1.61-4.35-3.76-4.35-1.73 0-2.5.95-2.93 1.62V9.15h-2.95V19h2.95v-5.27c0-1.39.26-2.73 1.98-2.73 1.69 0 1.71 1.58 1.71 2.82V19h2.95v-5.64Z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a
+                  href="https://github.com/MT-Python"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="GitHub"
+                  style="color: #ffffff"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 8-6 8-11.2A11.5 11.5 0 0 0 12 .5z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tool-chip"
+                  data-tip="Facebook"
+                  aria-label="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <!-- Blue circular background -->
+                    <circle cx="12" cy="12" r="12" fill="#1877F2" />
+
+                    <!-- White Facebook "f" -->
+                    <path
+                      fill="#FFFFFF"
+                      d="M13.55 20v-7h2.35l.35-2.75h-2.7V8.5c0-.8.22-1.35 1.4-1.35h1.5V4.7c-.26-.04-1.15-.1-2.2-.1-2.18 0-3.67 1.33-3.67 3.78v1.87H8.1V13h2.48v7h2.97Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="cf-name">Name</label>
+                  <input
+                    type="text"
+                    id="cf-name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                  <div class="field-error" data-error-for="cf-name"></div>
+                </div>
+                <div class="form-field">
+                  <label for="cf-email">Email</label>
+                  <input
+                    type="email"
+                    id="cf-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                  <div class="field-error" data-error-for="cf-email"></div>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="cf-subject">Subject</label>
+                <input
+                  type="text"
+                  id="cf-subject"
+                  name="subject"
+                  placeholder="What's this about?"
+                  required
+                />
+                <div class="field-error" data-error-for="cf-subject"></div>
+              </div>
+              <div class="form-field">
+                <label for="cf-message">Message</label>
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+                <div class="field-error" data-error-for="cf-message"></div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                Send Message
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </button>
+              <div class="form-success" id="formSuccess">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Message ready — thanks! Your email app should now be open to
+                send it.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =============================================================
+     FOOTER
+============================================================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-media">
+          <div class="night-drive">
+            <!-- SKY -->
+            <div class="sky">
+              <!-- Stars -->
+              <div class="stars">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <!-- Moon -->
+              <div class="night-moon"></div>
+
+              <!-- Clouds -->
+              <div class="cloud cloud-1">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="cloud cloud-2">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <!-- Far Mountains -->
+              <div class="mountains mountains-back"></div>
+
+              <!-- Forest -->
+              <div class="forest forest-back"></div>
+              <div class="forest forest-front"></div>
+            </div>
+
+            <!-- ROAD -->
+            <div class="night-road">
+              <div class="road-edge"></div>
+
+              <div class="road-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <!-- CAR -->
+            <div class="cartoon-car">
+              <!-- Car shadow -->
+              <div class="car-shadow"></div>
+
+              <!-- Main body -->
+              <div class="car-body">
+                <!-- Roof -->
+                <div class="car-roof"></div>
+
+                <!-- Windows -->
+                <div class="car-window car-window-1"></div>
+                <div class="car-window car-window-2"></div>
+
+                <!-- Door -->
+                <div class="car-door"></div>
+
+                <!-- Door handle -->
+                <div class="door-handle"></div>
+
+                <!-- Front light -->
+                <div class="car-headlight"></div>
+
+                <!-- Back light -->
+                <div class="car-taillight"></div>
+
+                <!-- Bumper -->
+                <div class="front-bumper"></div>
+              </div>
+
+              <!-- Wheels -->
+              <div class="car-wheel wheel-front">
+                <div class="wheel-hub">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="car-wheel wheel-back">
+                <div class="wheel-hub">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="#home" class="brand">
+              <span class="brand-mark">
+                <img
+                  src="logo.png"
+                  alt="Muntasir Tamzid Logo"
+                  width="32"
+                  height="32"
+                />
+              </span>
+              Muntasir Tamzid
+            </a>
+
+            <p>
+              I design intuitive, accessible digital products through thoughtful
+              UX, clean interfaces and purposeful systems.
+            </p>
+
+            <!-- SOCIAL MEDIA -->
+            <div class="footer-social">
+              <!-- GitHub -->
+              <a
+                href="https://github.com/MT-Python"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="footer-social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 8-6 8-11.2A11.5 11.5 0 0 0 12 .5z"
+                  />
+                </svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/muntasir-tamzid-shuvin-778157352/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="footer-social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21H9z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Behance -->
+              <a
+                href="https://www.behance.net/muntashuvin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Behance"
+                class="footer-social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M7.8 13.4c1 0 1.6-.5 1.6-1.4 0-1-.6-1.4-1.6-1.4H4.5v2.8h3.3zm.3 5c1.1 0 1.8-.6 1.8-1.6 0-1-.7-1.5-1.8-1.5H4.5V18.4h3.6zM2 8h6.4c2.1 0 3.5 1.2 3.5 3 0 1.2-.6 2-1.6 2.5 1.4.4 2.2 1.4 2.2 2.9 0 2.1-1.7 3.3-4 3.3H2zm18.9 1.4h-5.4V8h5.4zM14.5 15.6c.1 1.3 1 2.1 2.2 2.1.9 0 1.6-.4 1.9-1.1h2.2c-.4 1.8-1.9 3-4.1 3-2.7 0-4.5-1.9-4.5-4.7 0-2.7 1.8-4.7 4.4-4.7 2.9 0 4.5 2.1 4.5 5v.4zm4.2-1.6c-.1-1.2-.9-1.9-2-1.9-1.1 0-1.9.7-2.1 1.9z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dribbble -->
+              <a
+                href="https://dribbble.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dribbble"
+                class="footer-social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 8.7a15.5 15.5 0 0 0-4.5-.2c-.2-.5-.4-1-.6-1.5a15.8 15.8 0 0 0 3.8-3 8 8 0 0 1 1.3 4.7ZM15.8 4.9a14.2 14.2 0 0 1-3.3 2.6 45 45 0 0 0-2.2-3.7 8 8 0 0 1 5.5 1.1ZM8.8 4.4c.7 1 1.5 2.3 2.2 3.6A28 28 0 0 1 4.2 9.3a8.1 8.1 0 0 1 4.6-4.9ZM4 11.2a29.8 29.8 0 0 0 8-1.5c.2.4.4.9.6 1.4-4.4 1.3-6.7 4.7-7.4 5.9A8 8 0 0 1 4 11.2Zm2.6 7.1c.5-1.1 2.5-4.1 6.6-5.4.6 1.7 1 3.4 1.3 5.1a8 8 0 0 1-7.9.3Zm9.5-1.5a31.6 31.6 0 0 0-1.2-4.4 13.5 13.5 0 0 1 3.8.3 8 8 0 0 1-2.6 4.1Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- FOOTER LINKS -->
+          <nav class="footer-links" aria-label="Footer">
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#certificates">Certificates</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 Muntasir Tamzid. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- =============================================================
+     PROJECT CASE STUDY MODAL
+============================================================= -->
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal">
+        <button
+          class="modal-close"
+          id="modalClose"
+          aria-label="Close case study"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="modal-hero" id="modalHero">
+          <div class="placeholder-cover">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+            >
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+              <path d="M3 15l4.5-4.5a2 2 0 0 1 2.8 0L15 15" />
+              <circle cx="16" cy="9" r="1.5" />
+            </svg>
+          </div>
+        </div>
+        <div class="modal-content">
+          <span class="project-tag" id="modalTag"></span>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-lede" id="modalLede"></p>
+
+          <div class="modal-meta">
+            <div>
+              <div class="label">Year</div>
+              <div class="value" id="modalYear"></div>
+            </div>
+            <div>
+              <div class="label">Role</div>
+              <div class="value">UI/UX Designer</div>
+            </div>
+            <div>
+              <div class="label">Tools</div>
+              <div class="value" id="modalTools"></div>
+            </div>
+          </div>
+
+          <div class="case-block">
+            <h4>Overview</h4>
+            <p id="modalOverview"></p>
+          </div>
+          <div class="case-block">
+            <h4>Problem</h4>
+            <p id="modalProblem"></p>
+          </div>
+          <div class="case-block">
+            <h4>Goal</h4>
+            <p id="modalGoal"></p>
+          </div>
+          <div class="case-block">
+            <h4>User Research</h4>
+            <p id="modalResearch"></p>
+          </div>
+          <div class="case-block">
+            <h4>Persona</h4>
+            <p id="modalPersona"></p>
+          </div>
+          <div class="case-block">
+            <h4>User Journey</h4>
+            <p id="modalJourney"></p>
+          </div>
+          <div class="case-block">
+            <h4>User Flow</h4>
+            <p id="modalFlow"></p>
+          </div>
+          <div class="case-block">
+            <h4>Wireframes</h4>
+            <p id="modalWireframes"></p>
+          </div>
+          <div class="case-block">
+            <h4>UI Design</h4>
+            <p id="modalUi"></p>
+          </div>
+          <div class="case-block">
+            <h4>Design System</h4>
+            <p id="modalSystem"></p>
+          </div>
+          <div class="case-block">
+            <h4>Prototype</h4>
+            <p id="modalPrototype"></p>
+          </div>
+          <div class="case-block">
+            <h4>Final Solution</h4>
+            <p id="modalSolution"></p>
+          </div>
+          <div class="case-block">
+            <h4>Learnings</h4>
+            <p id="modalLearnings"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* =============================================================
+   PROJECT CASE STUDY DATA — edit this object to change modal content
+============================================================= */
+      const projectData = {
+        p1: {
+          tag: "Productivity App · UI/UX Design",
+          title: "FocusFlow",
+          year: "2026",
+          tools: "Figma, FigJam",
+          lede: "A focused productivity experience designed to help users organize tasks, build better routines and maintain focus.",
+          img: "",
+          overview:
+            "FocusFlow is a sample productivity concept exploring how a calm, distraction-free interface can support daily task management.",
+          problem:
+            "Users juggling multiple task apps often feel overwhelmed by cluttered interfaces and competing notifications.",
+          goal: "Design a minimal, focus-first task manager that reduces cognitive load and encourages consistent daily routines.",
+          research:
+            "Placeholder research notes: interviews with a small group of remote workers highlighted a need for fewer, clearer priorities per day.",
+          persona:
+            'Placeholder persona: "Rafi", a 27-year-old remote worker balancing several projects and needing a simple daily plan.',
+          journey:
+            "Placeholder journey: opening the app, reviewing today's focus list, completing tasks, reflecting at day's end.",
+          flow: "Placeholder flow: onboarding → set daily focus → task list → completion → daily summary.",
+          wireframes:
+            "Low-fidelity wireframes explored list-based and card-based layouts before settling on a card-based daily view.",
+          ui: "A dark, quiet visual language with generous spacing keeps attention on the current task rather than the interface.",
+          system:
+            "A small shared design system of typography, spacing tokens and reusable components kept every screen consistent.",
+          prototype:
+            "An interactive prototype in Figma linked the daily flow end-to-end for usability walkthroughs.",
+          solution:
+            "The final concept centers on a single daily focus list with soft progress indicators and minimal chrome.",
+          learnings:
+            "Placeholder learning: reducing visible options per screen made the biggest perceived difference in usability testing.",
+        },
+        p2: {
+          tag: "Circular Fashion · UI/UX Design",
+          title: "ReLoop",
+          year: "2025",
+          tools: "Figma, Illustrator",
+          lede: "A digital experience that encourages users to buy, wear, resell, swap, repair and give fashion a second life.",
+          img: "",
+          overview:
+            "ReLoop is a concept marketplace built around extending the life cycle of clothing items.",
+          problem:
+            "Fast fashion habits make it hard for people to easily resell, repair or swap clothing they no longer wear.",
+          goal: "Create an approachable platform that makes circular fashion actions feel as easy as a normal purchase.",
+          research:
+            "Placeholder research: surveyed sample users about barriers to reselling clothing online.",
+          persona:
+            'Placeholder persona: "Meherun", a sustainability-minded shopper looking for easier resale options.',
+          journey:
+            "Placeholder journey: list an item, get a value estimate, connect with a buyer, complete a swap or sale.",
+          flow: "Placeholder flow: item upload → condition check → listing → match → handoff.",
+          wireframes:
+            "Wireframes focused on a simple four-step listing flow to reduce drop-off.",
+          ui: "Warm, tactile visuals paired with clear category iconography to keep the marketplace feeling approachable.",
+          system:
+            "A componentized card and tag system supports many item types without visual inconsistency.",
+          prototype:
+            "A clickable prototype tested the listing flow with sample participants.",
+          solution:
+            "A guided, four-step listing flow with instant value estimates and swap suggestions.",
+          learnings:
+            "Placeholder learning: showing an estimated value early increased willingness to complete a listing.",
+        },
+        p3: {
+          tag: "Fitness App · UI/UX Design",
+          title: "FitLife",
+          year: "2025",
+          tools: "Figma, Framer",
+          lede: "A modern fitness experience designed around personalized workouts, progress tracking and simple user journeys.",
+          img: "",
+          overview:
+            "FitLife explores how a fitness app can feel personal and motivating without becoming overwhelming.",
+          problem:
+            "Many fitness apps present too many metrics at once, making it hard for beginners to know what to focus on.",
+          goal: "Design an approachable fitness companion that adapts to a user's current goal.",
+          research:
+            "Placeholder research: reviewed sample onboarding flows from popular fitness apps to identify friction points.",
+          persona:
+            'Placeholder persona: "Tanvir", a beginner looking for simple guidance rather than advanced analytics.',
+          journey:
+            "Placeholder journey: set a goal, follow a guided plan, log a workout, see weekly progress.",
+          flow: "Placeholder flow: goal selection → plan → workout session → logging → progress summary.",
+          wireframes:
+            "Wireframes prioritized a single primary action per screen to reduce decision fatigue.",
+          ui: "High-contrast progress rings and bold typography give quick, motivating feedback at a glance.",
+          system:
+            "A shared token system defines consistent spacing and color use across workout, log and summary screens.",
+          prototype:
+            "A prototype simulated a full week of logging to test the summary experience.",
+          solution:
+            "A single weekly focus screen replaces multiple competing dashboards.",
+          learnings:
+            "Placeholder learning: users preferred one weekly goal over several simultaneous metrics.",
+        },
+        p4: {
+          tag: "Web Design · UI Design",
+          title: "Coffee & Cats",
+          year: "2024",
+          tools: "Figma, Illustrator",
+          lede: "A playful modern website concept combining coffee culture with a cat-inspired visual identity.",
+          img: "",
+          overview:
+            "A concept website for a fictional cafe brand blending coffee culture with a playful cat theme.",
+          problem:
+            "The fictional brand needed a website that felt warm and playful without looking unprofessional.",
+          goal: "Design a friendly, characterful web presence that still communicates menu and location clearly.",
+          research:
+            "Placeholder research: looked at sample cafe websites to identify common navigation patterns.",
+          persona:
+            'Placeholder persona: "Nusrat", a regular cafe visitor browsing on mobile to check hours and menu.',
+          journey:
+            "Placeholder journey: land on homepage, browse menu, check location, view opening hours.",
+          flow: "Placeholder flow: homepage → menu → location → contact.",
+          wireframes:
+            "Wireframes explored playful illustration placement without disrupting menu readability.",
+          ui: "Soft cream and espresso tones paired with a friendly illustrated cat mascot throughout the site.",
+          system:
+            "A simple two-color palette and one display font kept the brand consistent across pages.",
+          prototype:
+            "A scrollable prototype demonstrated the homepage-to-menu experience.",
+          solution:
+            "A single-page scrolling layout with clear anchors for menu, story and visit information.",
+          learnings:
+            "Placeholder learning: playful illustration worked best in small, deliberate doses.",
+        },
+        p5: {
+          tag: "Mobile App · UI/UX Design",
+          title: "Digital Banking Experience",
+          year: "2024",
+          tools: "Figma, FigJam",
+          lede: "A conceptual banking experience focused on clarity, simplicity and accessible financial interactions.",
+          img: "",
+          overview:
+            "A concept mobile banking app focused on making everyday transactions feel simple and trustworthy.",
+          problem:
+            "Many banking apps overwhelm users with financial jargon and dense dashboards.",
+          goal: "Design a clear, accessible banking experience for everyday transactions.",
+          research:
+            "Placeholder research: reviewed accessibility guidelines for financial interfaces.",
+          persona:
+            'Placeholder persona: "Farhana", a first-time digital banking user who wants confidence in every action.',
+          journey:
+            "Placeholder journey: check balance, transfer funds, view transaction history, get confirmation.",
+          flow: "Placeholder flow: login → dashboard → transfer → confirm → receipt.",
+          wireframes:
+            "Wireframes emphasized large, legible transaction summaries and clear confirmation states.",
+          ui: "A calm, high-contrast palette with clear iconography builds trust and reduces anxiety around transactions.",
+          system:
+            "A strict grid and consistent confirmation pattern is reused across every transaction type.",
+          prototype:
+            "A prototype tested the transfer-and-confirm flow with sample users for clarity.",
+          solution:
+            "A three-step transfer flow with an explicit confirmation screen before any transaction completes.",
+          learnings:
+            "Placeholder learning: an explicit confirmation step significantly increased user confidence.",
+        },
+        p6: {
+          tag: "E-commerce · UI/UX Design",
+          title: "E-commerce Experience",
+          year: "2023",
+          tools: "Figma, Photoshop",
+          lede: "A modern shopping experience designed to simplify product discovery, comparison and checkout.",
+          img: "",
+          overview:
+            "A concept e-commerce experience focused on reducing friction between browsing and checkout.",
+          problem:
+            "Long checkout flows and unclear filtering often cause cart abandonment.",
+          goal: "Design a streamlined discovery-to-checkout journey with minimal steps.",
+          research:
+            "Placeholder research: analyzed sample checkout flows to identify unnecessary steps.",
+          persona:
+            'Placeholder persona: "Imran", a busy shopper who wants to compare products quickly and check out fast.',
+          journey:
+            "Placeholder journey: browse, filter, compare, add to cart, checkout.",
+          flow: "Placeholder flow: category → filter → product → cart → checkout.",
+          wireframes:
+            "Wireframes tested a condensed two-step checkout versus a traditional multi-step flow.",
+          ui: "Clean product cards and a persistent cart summary keep pricing and progress visible at all times.",
+          system:
+            "Consistent card, filter and button components scale across product categories.",
+          prototype:
+            "A prototype validated the condensed checkout with sample users.",
+          solution:
+            "A two-step checkout flow reduced the number of screens between cart and confirmation.",
+          learnings:
+            "Placeholder learning: reducing checkout to two steps was preferred over a single dense form.",
+        },
+      };
+
+      /* =============================================================
+   NAVBAR SCROLL STATE
+============================================================= */
+      const navbar = document.getElementById("navbar");
+      function onScroll() {
+        if (window.scrollY > 40) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      /* =============================================================
+   MOBILE MENU
+============================================================= */
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+      function openMobileMenu() {
+        mobileMenu.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+      }
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.contains("open")
+          ? closeMobileMenu()
+          : openMobileMenu();
+      });
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMobileMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMobileMenu();
+      });
+
+      /* =============================================================
+   EXPERIENCE ACCORDION
+============================================================= */
+      document.querySelectorAll("[data-exp]").forEach((head) => {
+        head.addEventListener("click", () => {
+          const item = head.closest(".exp-item");
+          item.classList.toggle("open");
+        });
+      });
+
+      /* =============================================================
+   PROJECT CASE STUDY MODAL
+============================================================= */
+      const overlay = document.getElementById("modalOverlay");
+      const modalClose = document.getElementById("modalClose");
+      let lastFocused = null;
+
+      function fillModal(id) {
+        const d = projectData[id];
+        if (!d) return;
+        document.getElementById("modalTag").textContent = d.tag;
+        document.getElementById("modalTitle").textContent = d.title;
+        document.getElementById("modalLede").textContent = d.lede;
+        document.getElementById("modalYear").textContent = d.year;
+        document.getElementById("modalTools").textContent = d.tools;
+        document.getElementById("modalOverview").textContent = d.overview;
+        document.getElementById("modalProblem").textContent = d.problem;
+        document.getElementById("modalGoal").textContent = d.goal;
+        document.getElementById("modalResearch").textContent = d.research;
+        document.getElementById("modalPersona").textContent = d.persona;
+        document.getElementById("modalJourney").textContent = d.journey;
+        document.getElementById("modalFlow").textContent = d.flow;
+        document.getElementById("modalWireframes").textContent = d.wireframes;
+        document.getElementById("modalUi").textContent = d.ui;
+        document.getElementById("modalSystem").textContent = d.system;
+        document.getElementById("modalPrototype").textContent = d.prototype;
+        document.getElementById("modalSolution").textContent = d.solution;
+        document.getElementById("modalLearnings").textContent = d.learnings;
+        /* Cover art is a placeholder — swap in a real project image via projectData[id].img */
+      }
+
+      function openModal(id) {
+        lastFocused = document.activeElement;
+        fillModal(id);
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      }
+      function closeModal() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+        if (lastFocused) lastFocused.focus();
+      }
+
+      document.querySelectorAll("[data-modal]").forEach((btn) => {
+        btn.addEventListener("click", () =>
+          openModal(btn.getAttribute("data-modal")),
+        );
+      });
+      modalClose.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("open"))
+          closeModal();
+      });
+
+      /* =============================================================
+   CONTACT FORM VALIDATION (client-side, mailto fallback)
+============================================================= */
+      const form = document.getElementById("contactForm");
+      const success = document.getElementById("formSuccess");
+
+      function setError(id, msg) {
+        const el = form.querySelector(`[data-error-for="${id}"]`);
+        if (el) el.textContent = msg || "";
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim();
+        const message = form.message.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        setError("cf-name", "");
+        setError("cf-email", "");
+        setError("cf-subject", "");
+        setError("cf-message", "");
+
+        if (!name) {
+          setError("cf-name", "Please enter your name.");
+          valid = false;
+        }
+        if (!email) {
+          setError("cf-email", "Please enter your email.");
+          valid = false;
+        } else if (!emailPattern.test(email)) {
+          setError("cf-email", "Please enter a valid email.");
+          valid = false;
+        }
+        if (!subject) {
+          setError("cf-subject", "Please add a subject.");
+          valid = false;
+        }
+        if (!message) {
+          setError("cf-message", "Please write a short message.");
+          valid = false;
+        }
+
+        if (!valid) {
+          success.classList.remove("show");
+          return;
+        }
+
+        const mailBody = encodeURIComponent(
+          `${message}\n\n— ${name} (${email})`,
+        );
+        const mailSubject = encodeURIComponent(subject);
+        window.location.href = `mailto:muntasir.tamzid06@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+        success.classList.add("show");
+        form.reset();
+      });
+
+      /* =============================================================
+   SCROLL REVEAL
+============================================================= */
+      const revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("in"));
+      }
+    </script>
+  </body>
+</html>
